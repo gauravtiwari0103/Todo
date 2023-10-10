@@ -26,7 +26,7 @@
             android:gravity="center"
             android:textStyle="bold"
             android:layout_marginLeft="30dp"
-            android:text="Task mapping"
+            android:text="Apply Leave"
             android:textColor="@color/white"/>
 
     </LinearLayout>

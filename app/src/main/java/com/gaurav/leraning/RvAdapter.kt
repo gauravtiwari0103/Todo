@@ -20,6 +20,7 @@ class RvAdapter(private val dataSet: ArrayList<Response>) :
         val leaveType : TextView
         val time: TextView
         val btn: Button
+        val tvSrno: TextView
 
         init {
             // Define click listener for the ViewHolder's View
@@ -27,6 +28,7 @@ class RvAdapter(private val dataSet: ArrayList<Response>) :
             leaveType= view.findViewById(R.id.tvDate)
             time = view.findViewById(R.id.tvTime)
             btn = view.findViewById(R.id.btnReassign)
+            tvSrno = view.findViewById(R.id.tvsrno)
 
         }
     }
@@ -49,6 +51,7 @@ class RvAdapter(private val dataSet: ArrayList<Response>) :
         viewHolder.leaveType.text = dataSet[position].LeaveType
         viewHolder.time.text = "${dataSet[position].FromDate} to ${dataSet[position].ToDate}"
         viewHolder.btn.text = dataSet[position].Status
+        viewHolder.tvSrno.text = "${position+1}"
 
     }
 
