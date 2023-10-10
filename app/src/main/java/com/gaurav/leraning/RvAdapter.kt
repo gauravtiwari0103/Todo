@@ -17,14 +17,14 @@ class RvAdapter(private val dataSet: ArrayList<Response>) :
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView
-        val date : TextView
+        val leaveType : TextView
         val time: TextView
         val btn: Button
 
         init {
             // Define click listener for the ViewHolder's View
-            title = view.findViewById(R.id.tvTime)
-            date= view.findViewById(R.id.tvDate)
+            title = view.findViewById(R.id.tvTitle)
+            leaveType= view.findViewById(R.id.tvDate)
             time = view.findViewById(R.id.tvTime)
             btn = view.findViewById(R.id.btnReassign)
 
@@ -45,7 +45,11 @@ class RvAdapter(private val dataSet: ArrayList<Response>) :
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.title.text = dataSet[position].LeaveName
+        viewHolder.title.text = "${dataSet[position].FromDate} - ${dataSet[position].ToDate}"
+        viewHolder.leaveType.text = dataSet[position].LeaveType
+        viewHolder.time.text = "${dataSet[position].FromDate} to ${dataSet[position].ToDate}"
+        viewHolder.btn.text = dataSet[position].Status
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
